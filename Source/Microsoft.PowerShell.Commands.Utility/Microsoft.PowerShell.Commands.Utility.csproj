@@ -77,6 +77,7 @@
     <Compile Include="GetRandomCommand.cs" />
     <Compile Include="GetVariableCommand.cs" />
     <Compile Include="ImportCsvCommand.cs" />
+    <Compile Include="Internal\VariableSelection.cs" />
     <Compile Include="MemberDefinition.cs" />
     <Compile Include="NewObjectCommand.cs" />
     <Compile Include="NewAliasCommand.cs" />

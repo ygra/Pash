@@ -1,5 +1,7 @@
 ﻿// Copyright (C) Pash Contributors. License: GPL/BSD. See https://github.com/Pash-Project/Pash/
 using System.Management.Automation;
+using System.Linq;
+using Microsoft.PowerShell.Commands.Utility.Internal;
 
 namespace Microsoft.PowerShell.Commands
 {
@@ -24,22 +26,12 @@ namespace Microsoft.PowerShell.Commands
 
         protected override void ProcessRecord()
         {
-            foreach (string name in Name)
-            {
-                PSVariable variable = SessionState.PSVariable.Get(name);
-
-                if (variable != null)
+            var selection = new VariableSelection(SessionState, Name, Include, Exclude);
+            selection.Process(
+                delegate(PSVariable variable)
                 {
-                    if (ValueOnly.ToBool())
-                    {
-                        WriteObject(variable.Value);
-                    }
-                    else
-                    {
-                        WriteObject(variable);
-                    }
-                }
-            }
+                    WriteObject(ValueOnly.ToBool() ? variable.Value : variable);
+                });
         }
     }
 }
