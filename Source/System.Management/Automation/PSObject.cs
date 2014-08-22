@@ -264,6 +264,21 @@ namespace System.Management.Automation
             {
                 return "";
             }
+            if (ImmediateBaseObject is Array)
+            {
+                var array = (Array)ImmediateBaseObject;
+                var ofs = " "; // FIXME: Where can we read the variable from here?
+                var sb = new StringBuilder();
+                var first = true;
+                foreach (var x in array)
+                {
+                    if (!first)
+                        sb.Append(ofs);
+                    sb.Append(x.ToString());
+                    first = false;
+                }
+                return sb.ToString();
+            }
             return ImmediateBaseObject.ToString();
         }
 

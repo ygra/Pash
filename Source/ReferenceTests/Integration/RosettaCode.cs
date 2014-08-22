@@ -12,14 +12,13 @@ namespace ReferenceTests.Integration
     [TestFixture]
     public class RosettaCode : ReferenceTestBase
     {
-        [Test, Explicit("Wrong output because arrays are not converted correctly to strings")]
+        [Test]
         // Taken from http://rosettacode.org/wiki/Array_concatenation#PowerShell
         public void ArrayConcatenation()
         {
             var code = NewlineJoin(
                 "$a = 1,2,3",
                 "$b = 4,5,6",
-                "",
                 "$c = $a + $b",
                 "\"$c\"");
             var expected = NewlineJoin("1 2 3 4 5 6");
