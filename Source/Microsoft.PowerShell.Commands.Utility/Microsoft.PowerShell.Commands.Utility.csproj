@@ -69,6 +69,8 @@
     <Compile Include="ClearVariableCommand.cs" />
     <Compile Include="ConsoleColorCmdlet.cs" />
     <Compile Include="ConvertToHtmlCommand.cs" />
+    <Compile Include="GenericMeasureInfo.cs" />
+    <Compile Include="GenericObjectMeasureInfo.cs" />
     <Compile Include="GetHostCommand.cs" />
     <Compile Include="ExportCsvCommand.cs" />
     <Compile Include="FormatListCommand.cs" />
@@ -79,6 +81,8 @@
     <Compile Include="GetVariableCommand.cs" />
     <Compile Include="ImportCsvCommand.cs" />
     <Compile Include="Language.cs" />
+    <Compile Include="MeasureInfo.cs" />
+    <Compile Include="MeasureObjectCommand.cs" />
     <Compile Include="MemberDefinition.cs" />
     <Compile Include="NewObjectCommand.cs" />
     <Compile Include="NewAliasCommand.cs" />
@@ -99,6 +103,7 @@
     <Compile Include="StyleInfo.cs" />
     <Compile Include="TeeObjectCommand.cs" />
     <Compile Include="PropertyEqualityComparer.cs" />
+    <Compile Include="TextMeasureInfo.cs" />
     <Compile Include="WriteDebugCommand.cs" />
     <Compile Include="WriteErrorCommand.cs" />
     <Compile Include="WriteHostCommand.cs" />
